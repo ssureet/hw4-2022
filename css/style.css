@@ -1,220 +1,649 @@
-html{
-  scroll-behavior: smooth;
+/* Default position for Skip to Main  */
+.skip{
+    position: absolute;
+    top: -40px;
+  }
+
+  /* Positions Skip to Main when in focus */
+  .skip:focus{
+    position: absolute;
+    top: 20px;
+  }
+
+/* Style header and nav */
+header {
+    display: flex;
+    background-color: #966e69;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
-body{
-  background-color: #737373;
-  font-size: 18px;
-  line-height: 1.15;
-  margin: 0;
-  padding: 0;
-}
-
-
-.overview{
-  background-attachment: fixed; /* Parallax effect */     
-  background-position: center;  /* Parallax effect */
-  background-repeat: no-repeat; /* Parallax effect */
-  background-size: cover;       /* Parallax effect */
-  color: white;
-  height: 400px;                /* Parallax effect */
-}
-
-
-.overview p{
-  color: white;
-  font-size: 24px;
-  padding: 0 100px;
-  text-align: center;
+.title{
+    padding-top: 15px;
 }
 
 h1{
-  font-size: 50px;
-  line-height: 1;
-  padding: 50px 0;
-  text-align: center;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 45px;
+    color: #ffecdb;
 }
 
-h2{
-  font-size: 32px;
-  line-height: 1.5;
+.nav_pages{
+    background-color: #966e69;
+    padding: 10px;
 }
 
-nav li{
-  display:inline;
-  padding-right:20px;
-
+.nav_item{
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    margin: 4px 2px;
 }
 
-nav a{
-  color: black;
-  font-weight: bold;
-  text-decoration: none; 
+ul a{
+    text-decoration: none;
+    color: #ffecdb;
 }
 
-.skip a{
-  background: white;
-  left: 0;
-  padding: 6px;
-  -webkit-transition: top 1s ease-out;
-  transition: top 1s ease-out;
-  z-index: 1;
+.nav_item:hover{
+    text-decoration: underline;
 }
 
-
-nav{
-  background-color: #ddd;
-  padding: 25px 0; 
-  text-align: left;
+.nav_item.active{
+    background-color: #551700;
+    border: 3px solid #ffecdb;
+    border-radius: 30px;
 }
+
+/* Style footer */
 
 footer{
-  background-color: black;
-  color: white;
-  padding-top: 30px;
-  text-align: center;
+    background-color: #966e69;
+}
+footer p{
+    text-align: right;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 40px;
+    margin: 4px 2px;
+    color: #ffecdb;
+}
+
+/* Style main & animate h2 elements for index page */
+main{
+    background-color: #f7d4c7;
 }
 
 
-.text-block{
-  background-color: rgba(255, 255, 255, .8);
-  border: 10px solid black;
-  padding: 30px;
-}
-
-
-@media screen and (prefers-reduced-motion: reduce){
-  html{
-      scroll-behavior: auto; /* Removes scroll animation */
+@keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -5.2rem;}
+    30% {margin-top: -5.2rem;}
+    40% {margin-top: -11.07rem;}
+    60% {margin-top: -11.07rem;}
+    70% {margin-top: -5.2rem;}
+    80% {margin-top: -5.2rem;}
+    90% {margin-top: 0;}
+    100% {margin-top: 0;}
   }
 
-  .skip a{
-    -webkit-transition: none; /* sets to default setting */
-    transition: none;        /* sets to default setting */
-   }
-
-  /*Turn off parallax*/
-  header{
-    background-attachment: initial;
+@media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+}
+.container {
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 42px;
+    color: #5C0819;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+.animation {
+    height:65px;
+    overflow:hidden;
+    margin-left: 1rem;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 45px;
+    color: #5C0819;
+  }
+
+  .animation > div > div {
+    padding: 0.5rem;
+    height:3.81rem;
+    margin-bottom: 2.81rem;
+    display:inline-block;
+  }
+
+  .animation div:first-child {
+    animation: text-animation 8s infinite;
+  }
+
+  .first div {
+    background-color:#f7d4c7;
+    border:#5C0819 solid 3px;
+    border-radius: 25px;
+  }
+  .second div {
+    background-color:#f7d4c7;
+    border:#5C0819 solid 3px;
+    border-radius: 25px;
+  }
+  .third div {
+    background-color:#f7d4c7;
+    border:#5C0819 solid 3px;
+    border-radius: 25px;
+  }
+
+/* Style remaining body of index page */
+
+.intro{
+    display: grid;
+    grid-template-columns: 200px 400px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin: 5px;
 }
 
-/*Your Code Here*/
-/* PLEASE DO NOT REMOVE MY COMMENTS.  THEY HELP US HELP YOU DEBUG. */
+.intro > img {
+    border-radius: 25%;
+    object-fit: cover;
+    padding: 15%;
+    max-width: auto;
+    height: 100%;
+    grid-column-start: 2;
+    grid-column-end: -1;
+  }
 
-/* Step 1: Write selector/rule property to add an underline when
-links in the navigation are in the hover or focus state.*/
+  .intro > p{
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: #AA422F;
+    padding: 20px 20px;
+    border:#5C0819 solid 3px;
+    border-radius: 25px;
+    text-align: right;
+  }
 
-nav a:hover, nav a:focus{
-  text-decoration: underline;
+  .experience{
+    display: grid;
+    grid-template-columns: 400px 200px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin: 5px;
 }
 
+.experience > img {
+    border-radius: 25%;
+    object-fit: cover;
+    padding: 15%;
+    max-width: auto;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 
-/* Step 2a: Write selector/rule property to position the default position for the skip class element*/
+  .experience > p{
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: #AA422F;
+    padding: 20px 20px;
+    border:#5C0819 solid 3px;
+    border-radius: 25px;
+  }
 
-.skip a{
-  position: absolute;
-  top: -40px;
+  
+.accomplishments{
+    display: grid;
+    grid-template-columns: 200px 300px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin: 5px;
 }
 
-/* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
+.accomplishments > img {
+    border-radius: 25%;
+    object-fit: cover;
+    padding: 15%;
+    max-width: 370px;
+    height: auto;
+    grid-column-start: 2;
+    grid-column-end: -1;
+  }
 
-.skip a:focus{
-  position: absolute;
-  top: 20px;
+  .accomplishments > p{
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: #AA422F;
+    padding: 20px 20px;
+    border:#5C0819 solid 3px;
+    border-radius: 25px;
+    text-align: right;
+  }
+
+  .accomplishments > p > a{
+    color: #AA422F;
+    font-style: italic;
+  }
+
+/* Style main element of Portrait page */
+
+h2.portrait{
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 42px;
+  color: #5C0819;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Step 3: Write selector/rule property to style all elements when in focus*/
-
-*:focus{
-  border: 2px solid black;
-}
-
-/* Step 4: Write selector/rule property to style the container */
-
-.container{
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  row-gap: 15px;
-}
-
-/* Step 5: Write selector/rule property to add the background image to the 
-first div in the grid  and place it in the grid. */
-
-.container div:first-child{
-  grid-column-start: 1;
-  grid-column-end: -1;
-  background-image: url(../images/header.jpg);
-  background-attachment: fixed; /* Parallax effect */     
-  background-position: center;  /* Parallax effect */
-  background-repeat: no-repeat; /* Parallax effect */
-  background-size: cover;       /* Parallax effect */
-} 
-
-/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
- four rows in the grid. */
-
-      /*This will be a lot of rules.... but be strategic and combine seletors*/
-
-.about, .method, .clients, .contact{
-  grid-column: 2/span 1;
-}
-
-.about-image, .method-image, .clients-image, .contact-image {
-  grid-column: 1/-1;
-  max-height: 600px;
-  overflow: hidden; 
-}
-
-.about, .about-image{
-  grid-row-start: 2;
-}
-
-.method, .method-image{
-  grid-row-start: 3;
-}
-
-.clients, .clients-image{
-  grid-row-start: 4;
-}
-
-.contact, .contact-image{
-  grid-row-start: 5;
-}
-
- /* Step 8: Write the selector/rule property to style the .text-block class. */
- .text-block{
+h3.portrait{
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 28px;
+  color: #AA422F;
+  height: 100px;
   text-align: center;
   margin: auto;
- }
-
-/* Add your media query here */
-@media screen and (min-width: 800px){
-
-  /* Step 9: Write the selector/rule property to style the nav element */
-  nav{
-    text-align: right;
-    padding: 20px 0px 30px 0px;
-  }
- 
-  /* Step 10: Write the selector/rule property to update the .container class */
-.container{
-  display: grid;
-  grid-template-columns: 50px auto 500px auto 50px;
 }
 
-  /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
-  div.about, div.clients, div.method-image, div.contact-image{
-    grid-column: 3/ span 2;
+.portrait_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4% 2%;
+  margin: auto;
+  box-sizing: border-box;
+  width: 90%;
+  height: auto;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 3px solid #5C0819;
+}
+
+.port_box {
+  border: 3px solid #966e69;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.port_box > img {
+  height: 200px;
+}
+
+.port_box > span {
+  position: absolute;
+  width: 100%;
+  top: 92%;
+  display: none;
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  color: #5C0819;
+  display: block;
+  text-align: center;
+}
+
+
+.port_box > img:hover {
+  width: 200px;
+  height: auto;
+}
+
+/* Style main element of Event page */
+
+h2.event{
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 42px;
+  color: #5C0819;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3.event{
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 28px;
+  color: #AA422F;
+  height: 100px;
+  text-align: center;
+  margin: auto;
+}
+
+/* Style grid for Event page */
+
+#grid { 
+  margin: auto;
+  width: 90vw;
+  display: grid;
+  grid-row-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+}
+
+.smallgrid { 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.textHolder {
+  position: absolute;
+  top: 45%;
+  right: 50%;
+  transform: translateY(-30%);
+}
+
+.odd > .desc{
+  background-color: #883425;
+  z-index: 4;
+  width: 112%;
+  margin-left: -10.5%;
+  transform: perspective(2400px) rotateY(-35deg);
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  text-align: center;
+}
+
+.odd > .desc > .textHolder{
+  right: 5%;
+}
+
+.even > .desc > .textHolder{
+  right: 5%;
+}
+
+.even > .desc{
+  z-index: 2;
+  background-color: #AA422F;
+  width: 112%;
+  transform: perspective(2400px) rotateY(35deg);
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+.even > .photo{
+  z-index: 3;
+  width: 150%;
+  margin-left: -23%;
+  transform: perspective(1000px) rotateY(-22deg);
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.odd > .photo{
+  z-index: 5;
+  width: 150%;
+  margin-left: -25%;
+  transform: perspective(1000px) rotateY(20deg);
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+img {
+  display: block;
+  height: 100%;
+}
+
+.textHolder > h4 {
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 21px;
+  color: #f7d4c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.textHolder > p {
+  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  color: #f7d4c7;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+/* Tablet breakpoint */
+@media screen and (min-width: 800px){
+
+  /* Reformat header */
+  header{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 
-  div.method, div.contact, div.about-image, and div.clients-image{
-    grid-column: 2/ span 2;
+  .title{
+    padding: 15px 5px;
+    inline-size: 190px;
+    overflow-wrap: break-word;
+  }
+  
+  h1{
+    font-size: 35px;
   }
 
- /* Step 13:Write the selector/rule property to update the .text-block class */
- .text-block{
-  max-height: 250px;
-  overflow: visible;
- }
+  .nav_pages{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 13px;
+  }
+
+  .nav_item{
+    padding: 10px;
+  }
+
+  /* Reformat index page */
+  .container{
+    padding-top: 30px;
+  }
+
+  .intro, .accomplishments{
+    display: grid;
+    grid-template-columns: 350px 400px;
+    margin: 5px;
+}
+
+.experience{
+  grid-template-columns: 400px 350px;
+}
+
+.intro > img, .experience > img, .accomplishments > img {
+    border-radius: 5px;
+    object-fit: cover;
+    padding: 10%;
+    max-width: auto;
+    height: 100%;
+}
+  
+
+  .intro > p, .experience > p, .accomplishments > p{
+    font-size: 20px;
+    border: #5C0819 double 4px;
+    border-radius: 3px;
+  }
+
+/* Reformat Portrait Page */
+h2.portrait{
+  font-size: 54px;
+}
+
+h3.portrait{
+  font-size: 32px;
+}
+
+.portrait_gallery {
+  width: 93%;
+  border: 5px double #5C0819;
+  border-radius: 5%;
+}
+
+.port_box {
+  border: 3px solid #AA422F;
+  width: 350px;
+  height: 500px;
+  margin: 5px 5px;
+}
+
+.port_box > img {
+  height: 300px;
+}
+
+.port_box > span {
+  width: 100%;
+  top: 97%;
+}
+
+
+.port_box > img:hover {
+  width: 300px;
+  height: auto;
+}
+
+/* Reformat Event Page */
+
+h2.event{
+  font-size: 54px;
+}
+
+h3.event{
+  font-size: 28px;
+  margin: 30px;
+  border: #883425 3px dotted;
+}
+
+#grid { 
+  padding-top: 30px;
+  grid-template-columns: repeat(2, 360px);
+  justify-content: center;
+}
+
+}
+
+/* Laptop breakpoint */
+@media screen and (min-width: 1000px){
+
+  /* Reformat header */ 
+  header{
+    justify-content: space-between;
+  }
+
+  h1{
+    font-size: 40px;
+  }
+
+  .nav_item{
+    font-size: 20px;
+  }
+
+  /* Reformat index page */
+  .container{
+    padding-top: 30px;
+    font-size: 55px;
+  }
+
+  .first div, .second div, .third div {
+    border: #f7d4c7 double 6px;
+  }
+
+  .intro, .accomplishments{
+    grid-template-columns: 400px 500px;
+    margin: 10px;
+    border: dashed 5px #5C0819;
+    border-radius: 10px;
+}
+
+.experience{
+  grid-template-columns: 500px 400px;
+  margin: 10px;
+  border: dashed 5px #AA422F;
+  border-radius: 10px;
+}
+
+.intro > img, .experience > img, .accomplishments > img {
+    border-radius: 5px;
+    object-fit: cover;
+    padding: 5%;
+    max-width: 450px;
+    height: auto;
+}
+  
+
+  .intro > p, .experience > p, .accomplishments > p{
+    font-size: 30px;
+    border: #5C0819 double 0px;
+  }
+
+/* Reformat Portrait Page */
+h2.portrait{
+  font-size: 54px;
+}
+
+h3.portrait{
+  font-size: 32px;
+}
+
+.portrait_gallery {
+  width: 95%;
+  border: 5px dotted #5C0819;
+  border-radius: 7%;
+}
+
+.port_box {
+  border: 10px double #803224;
+  width: 325px;
+  height: 540px;
+  background-color: #D48566;
+}
+
+.port_box > img {
+  height: 280px;
+}
+
+.port_box > span {
+  color: #870C25;
+}
+
+.port_box > img:hover {
+  width: 320px;
+  height: auto;
+}
+
+/* Reformat Event Page */
+h3.event{
+  margin-top: 5px;
+}
+
+#grid { 
+  margin: auto;
+  padding-top: 30px;
+  grid-template-columns: repeat(3, 350px);
+  row-gap: 20px;
+}
+
 }
